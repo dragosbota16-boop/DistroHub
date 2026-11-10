@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>DistroHub</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#0e0f11;--pn:#141518;--hv:#1a1c20;--bd:#25272c;--tx:#e6e7e9;--mu:#8a8f98;--ac:#46c2a0;--sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:dark}
+:root[data-theme=light]{--bg:#fbfbfa;--pn:#f3f3f1;--hv:#ebebe8;--bd:#dcdcd7;--tx:#1a1b1e;--mu:#62666e;--ac:#0b7a5c;color-scheme:light}
+@media(prefers-color-scheme:light){:root:not([data-theme=dark]){--bg:#fbfbfa;--pn:#f3f3f1;--hv:#ebebe8;--bd:#dcdcd7;--tx:#1a1b1e;--mu:#62666e;--ac:#0b7a5c;color-scheme:light}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.55 var(--sans)}
+a{color:inherit;text-decoration:none}svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;flex:none}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--bd)}
+#bar{height:2px;background:var(--ac);width:0}#bar.go{animation:b .35s ease-out}@keyframes b{from{width:0;opacity:1}to{width:100%;opacity:0}}
+nav{max-width:1080px;margin:auto;height:48px;display:flex;gap:2px;align-items:center;padding:0 16px}
+.lg{display:flex;align-items:center;gap:8px;font:500 14px var(--mono);margin-right:12px}.lg i{width:22px;height:22px;border:1.5px solid var(--ac);border-radius:4px;display:grid;place-items:center;color:var(--ac);font:600 11px var(--mono);font-style:normal}
+nav a.l{padding:5px 9px;border-radius:5px;color:var(--mu);transition:.12s}nav a.l:hover{color:var(--tx);background:var(--hv)}nav a.l.on{color:var(--tx);background:var(--hv)}
+.sp{flex:1}.sb{position:relative;width:220px}.sb svg{position:absolute;left:8px;top:8px;color:var(--mu)}.sb input{padding-left:30px}.sb kbd{position:absolute;right:7px;top:6px;font:11px var(--mono);color:var(--mu);border:1px solid var(--bd);border-radius:3px;padding:0 5px}
+input,select{background:var(--pn);color:var(--tx);border:1px solid var(--bd);border-radius:5px;padding:6px 9px;font:inherit;width:100%;transition:border-color .12s}input:focus,select:focus,button:focus-visible,a:focus-visible{outline:none;border-color:var(--ac);box-shadow:0 0 0 1px var(--ac)}
+.ib{background:none;border:1px solid transparent;color:var(--mu);border-radius:5px;padding:5px;cursor:pointer;display:inline-grid;place-items:center;transition:.12s}.ib:hover{background:var(--hv);color:var(--tx)}.ib.on{color:var(--ac)}
+.bt{display:inline-flex;gap:6px;align-items:center;font:500 13px var(--sans);padding:6px 11px;border-radius:5px;border:1px solid var(--bd);background:var(--pn);color:var(--tx);cursor:pointer;transition:.12s}.bt:hover{background:var(--hv)}.bt.p{background:var(--ac);border-color:var(--ac);color:var(--bg)}.bt.p:hover{filter:brightness(1.1)}
+main{max-width:1080px;margin:auto;padding:24px 16px 56px}h1{font-size:22px;font-weight:600;margin:0 0 4px;letter-spacing:-.01em}h2{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--mu);margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--bd)}
+.mu{color:var(--mu)}.mo{font:12.5px var(--mono)}.two{display:grid;grid-template-columns:1fr 280px;gap:32px}.ex{display:grid;grid-template-columns:200px 1fr;gap:24px}
+.mg{width:28px;height:28px;border-radius:4px;display:grid;place-items:center;font:600 13px var(--mono);color:var(--c);background:color-mix(in srgb,var(--c) 14%,var(--pn));border:1px solid color-mix(in srgb,var(--c) 35%,var(--bd));flex:none}
+.r{display:grid;grid-template-columns:28px minmax(130px,1.3fr) 1fr 1fr 1fr 90px 64px;gap:12px;align-items:center;padding:9px 8px;border-bottom:1px solid var(--bd);transition:background .12s}.r:hover{background:var(--pn)}
+.r .nm{font-weight:500}.r .nm small{display:block;font:400 12px var(--sans);color:var(--mu)}.r .m{font:12px var(--mono);color:var(--mu)}.r .a{display:flex;justify-content:flex-end}.rh{font:11px var(--mono);color:var(--mu);text-transform:uppercase;padding:0 8px 6px}.rh.r{border-bottom:1px solid var(--bd);background:none}
+.ft{border-left:2px solid var(--ac);padding:2px 0 2px 16px;margin-bottom:28px}.ft h1{font-size:28px}.dl{display:grid;grid-template-columns:130px 1fr;font:12.5px var(--mono)}.dl>*{padding:6px 0;border-bottom:1px solid var(--bd)}.dl>:nth-child(odd){color:var(--mu)}
+.pk{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd)}.pk>b{font:12px var(--mono);color:var(--mu)}
+.lk{display:flex;justify-content:space-between;padding:4px 0;color:var(--mu)}.lk:hover{color:var(--tx)}
+.fl label{display:block;font:11px var(--mono);color:var(--mu);text-transform:uppercase;margin:12px 0 4px}.ck{display:flex!important;gap:8px;align-items:center;text-transform:none!important;font:13px var(--sans)!important;color:var(--tx)!important}.ck input{width:auto}
+.seg{display:inline-flex;border:1px solid var(--bd);border-radius:5px;overflow:hidden;margin:4px 0 14px}.seg button{background:var(--pn);color:var(--mu);border:0;border-right:1px solid var(--bd);padding:6px 12px;font:13px var(--sans);cursor:pointer}.seg button:last-child{border:0}.seg button.on{background:var(--hv);color:var(--tx);box-shadow:inset 0 -2px var(--ac)}
+.em{text-align:center;padding:40px 16px;border:1px dashed var(--bd);border-radius:6px;color:var(--mu)}.em svg{width:22px;height:22px;margin-bottom:6px}
+.wrap{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{border-bottom:1px solid var(--bd);padding:8px 10px;text-align:left;vertical-align:top}th{font:500 12px var(--mono);color:var(--mu);white-space:nowrap}tr.df td{background:color-mix(in srgb,var(--ac) 9%,transparent)}td{font-family:var(--mono);font-size:12.5px}.cr{font:12px var(--mono);color:var(--mu);margin-bottom:12px}.cr a:hover{color:var(--tx)}
+@media(max-width:820px){.two,.ex{grid-template-columns:1fr}.sb{width:140px}.sb kbd{display:none}.r{grid-template-columns:28px 1fr auto;row-gap:2px}.r .m{display:none}.rh{display:none}.r .m:nth-of-type(1){display:block;grid-column:2}.lg span{display:none}}
+</style></head><body>
+<header><div id="bar"></div><nav><a class="lg" href="#"><i>&gt;_</i><span>distrohub</span></a><a class="l" href="#explore" data-r="explore">Explore</a><a class="l" href="#compare" data-r="compare">Compare<span id="cc"></span></a><a class="l" href="#finder" data-r="finder">Finder</a><a class="l" href="#favs" data-r="favs">Saved</a><span class="sp"></span>
+<div class="sb"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg><input id="gs" placeholder="Search distros" aria-label="Search distros" onkeydown="if(event.key=='Enter'){F.q=this.value;go('explore');route()}"><kbd>/</kbd></div>
+<button class="ib" onclick="rnd()" title="Random distro" aria-label="Random distro"><svg viewBox="0 0 16 16"><path d="M2 4h3l6 8h3M2 12h3l1.5-2M9.5 6 11 4h3M12 2l2 2-2 2M12 10l2 2-2 2"/></svg></button>
+<button class="ib" onclick="th()" title="Toggle theme" aria-label="Toggle theme"><svg viewBox="0 0 16 16"><circle cx="8" cy="8" r="3"/><path d="M8 1v1.5M8 13.5V15M1 8h1.5M13.5 8H15M3 3l1 1M12 12l1 1M13 3l-1 1M4 12l-1 1"/></svg></button></nav></header>
+<main id="app"></main>
+<script>
+const D=[
+["Arch Linux","Independent","pacman","systemd","Rolling","Advanced","https://archlinux.org","#1793d1",0,0],
+["Debian","Independent","apt / dpkg","systemd","Fixed","Intermediate","https://www.debian.org","#d70a53",0,1],
+["Ubuntu","Debian","apt / dpkg","systemd","Fixed","Beginner","https://ubuntu.com","#e95420",1,1],
+["Fedora","Independent","dnf","systemd","Fixed","Intermediate","https://fedoraproject.org","#3c6eb4",1,1],
+["openSUSE","Independent","zypper","systemd","Rolling and fixed","Intermediate","https://www.opensuse.org","#73ba25",1,1],
+["Gentoo","Independent","portage","OpenRC or systemd","Rolling","Advanced","https://www.gentoo.org","#7a6cb5",0,0],
+["Void Linux","Independent","xbps","runit","Rolling","Advanced","https://voidlinux.org","#478061",0,0],
+["Alpine Linux","Independent","apk","OpenRC","Fixed","Advanced","https://alpinelinux.org","#0d97d1",0,1],
+["Linux Mint","Ubuntu","apt / dpkg","systemd","Fixed","Beginner","https://linuxmint.com","#87a556",1,0],
+["Pop!_OS","Ubuntu","apt / dpkg","systemd","Fixed","Beginner","https://pop.system76.com","#48b9c7",1,0],
+["NixOS","Independent","nix","systemd","Both","Advanced","https://nixos.org","#5277c3",0,1],
+["Manjaro","Arch","pacman","systemd","Rolling","Intermediate","https://manjaro.org","#35bf5c",1,0],
+["EndeavourOS","Arch","pacman","systemd","Rolling","Intermediate","https://endeavouros.com","#9a5fd6",1,0],
+["Bazzite","Fedora","rpm-ostree","systemd","Fixed","Beginner","https://bazzite.gg","#8a7cff",1,0],
+["Rocky Linux","RHEL","dnf","systemd","Fixed","Intermediate","https://rockylinux.org","#10b981",0,1],
+["Kali Linux","Debian","apt / dpkg","systemd","Rolling","Intermediate","https://www.kali.org","#367bf0",0,0],
+["Tails","Debian","apt / dpkg","systemd","Fixed","Beginner","https://tails.net","#a07ad0",0,0]
+].map((a,i)=>({id:i,name:a[0],base:a[1],pm:a[2],init:a[3],rel:a[4],diff:a[5],url:a[6],col:a[7],game:a[8],srv:a[9],slug:a[0].toLowerCase().replace(/[^a-z0-9]+/g,"-")}));
+const S=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch(e){return d}},W=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const I0={q:"",pm:"",init:"",base:"",rel:"",diff:"",game:false,srv:false,so:"az"};
+let fav=S("fav",[]),cmp=S("cmp",[]),rec=S("rec",[]),F={...I0},qa={};
+const $=document.getElementById("app"),by=s=>D.find(d=>d.slug==s),go=h=>location.hash=h,rnd=()=>go("d/"+D[Math.random()*D.length|0].slug);
+const th=()=>{const r=document.documentElement,l=getComputedStyle(r).getPropertyValue("--bg").trim()=="#fbfbfa";r.dataset.theme=l?"dark":"light"};
+function tog(l,id,max){const i=l.indexOf(id);i>=0?l.splice(i,1):(max&&l.length>=max?alert("You can compare up to 4 distributions."):l.push(id));W("fav",fav);W("cmp",cmp);route(1)}
+function setF(k,v){F={...I0,[k]:v};go("explore");route()}
+const mg=d=>`<span class="mg" style="--c:${d.col}">${d.name[0]}</span>`;
+const star=on=>`<svg viewBox="0 0 16 16" ${on?'style="fill:currentColor"':''}><path d="m8 1.8 1.9 4 4.3.5-3.2 3 .9 4.3L8 11.4l-3.9 2.2.9-4.3-3.2-3 4.3-.5z"/></svg>`;
+const acts=d=>`<button class="ib ${fav.includes(d.id)?'on':''}" onclick="tog(fav,${d.id})" title="Save" aria-label="Save ${d.name}">${star(fav.includes(d.id))}</button><button class="ib ${cmp.includes(d.id)?'on':''}" onclick="tog(cmp,${d.id},4)" title="Compare" aria-label="Compare ${d.name}"><svg viewBox="0 0 16 16">${cmp.includes(d.id)?'<path d="m3 8.5 3 3 7-7"/>':'<path d="M8 3v10M3 8h10"/>'}</svg></button>`;
+const row=d=>`<div class="r">${mg(d)}<a class="nm" href="#d/${d.slug}">${d.name}<small>Based on ${d.base}</small></a><span class="m">${d.pm}</span><span class="m">${d.init}</span><span class="m">${d.rel}</span><span class="m">${d.diff}</span><span class="a">${acts(d)}</span></div>`;
+const head=`<div class="r rh"><span></span><span>Name</span><span>Packages</span><span>Init</span><span>Release</span><span>Level</span><span></span></div>`;
+const empty=(t,b)=>`<div class="em"><svg viewBox="0 0 16 16"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg><div>${t}</div>${b||""}</div>`;
+const dl=d=>`<div class="dl"><div>Base</div><div>${d.base}</div><div>Package manager</div><div>${d.pm}</div><div>Init system</div><div>${d.init}</div><div>Release model</div><div>${d.rel}</div><div>Difficulty</div><div>${d.diff}</div></div>`;
+function home(){const day=D[Math.floor(Date.now()/864e5)%D.length],cnt=k=>[...new Set(D.map(d=>d[k]))].map(v=>[v,D.filter(d=>d[k]==v).length]);
+const picks=[["linux-mint","First install after Windows"],["bazzite","Gaming-focused, Fedora base"],["debian","Conservative base for servers and desktops"],["void-linux","runit instead of systemd"],["nixos","Declarative configuration"]];
+$.innerHTML=`<div class="two"><div><div class="ft"><div class="mo mu">DISTRO OF THE DAY</div><h1>${day.name}</h1>${dl(day)}<p style="margin:12px 0 0"><a class="bt p" href="#d/${day.slug}">Open page</a> <a class="bt" href="${day.url}" target="_blank" rel="noopener">Official site</a></p></div>
+<h2>Editor’s picks</h2>${picks.map((p,i)=>{const d=by(p[0]);return`<a class="pk" href="#d/${d.slug}"><b>0${i+1}</b><div><b style="font:500 14px var(--sans);color:var(--tx)">${d.name}</b> <span class="mu">${p[1]}</span><div class="mo mu">${d.pm} · ${d.init}</div></div></a>`}).join("")}
+<h2 style="margin-top:28px">Rolling releases</h2>${head}${D.filter(d=>d.rel.startsWith("Rolling")).map(row).join("")}</div>
+<aside><h2>Catalog</h2><div class="dl" style="grid-template-columns:1fr auto"><div>Distributions</div><div>${D.length}</div><div>Package managers</div><div>${cnt("pm").length}</div><div>Init setups</div><div>${cnt("init").length}</div><div>Beginner-friendly</div><div>${D.filter(d=>d.diff=="Beginner").length}</div></div>
+<h2 style="margin-top:24px">By package manager</h2>${cnt("pm").map(x=>`<a class="lk mo" href="#explore" onclick="setF('pm','${x[0]}');return false"><span>${x[0]}</span><span>${x[1]}</span></a>`).join("")}
+<h2 style="margin-top:24px">Recently viewed</h2>${rec.length?rec.map(i=>`<a class="lk" href="#d/${D[i].slug}">${D[i].name}</a>`).join(""):'<span class="mu">Distros you open appear here.</span>'}</aside></div>`}
+function explore(){const sel=(k,l)=>`<label>${l}</label><select onchange="F.${k}=this.value;ex()"><option value="">Any</option>${[...new Set(D.map(d=>d[k]))].sort().map(v=>`<option ${F[k]==v?'selected':''}>${v}</option>`).join("")}</select>`;
+$.innerHTML=`<h1>Explore</h1><div class="cr" id="ct"></div><div class="ex"><aside class="fl"><input placeholder="Filter by name" value="${F.q}" oninput="F.q=this.value;ex()">${sel("pm","Package manager")}${sel("init","Init system")}${sel("base","Based on")}${sel("rel","Release model")}${sel("diff","Difficulty")}
+<label class="ck"><input type="checkbox" ${F.game?'checked':''} onchange="F.game=this.checked;ex()">Gaming focus</label><label class="ck"><input type="checkbox" ${F.srv?'checked':''} onchange="F.srv=this.checked;ex()">Server use</label>
+<label>Sort</label><select onchange="F.so=this.value;ex()"><option value="az" ${F.so=="az"?'selected':''}>Name A–Z</option><option value="za" ${F.so=="za"?'selected':''}>Name Z–A</option><option value="df" ${F.so=="df"?'selected':''}>Easiest first</option></select>
+<p><button class="bt" onclick="F={...I0};explore()">Reset filters</button></p></aside><div id="ex"></div></div>`;ex()}
+function ex(){const o={Beginner:0,Intermediate:1,Advanced:2};let r=D.filter(d=>d.name.toLowerCase().includes(F.q.toLowerCase())&&["pm","init","base","rel","diff"].every(k=>!F[k]||d[k]==F[k])&&(!F.game||d.game)&&(!F.srv||d.srv));
+r.sort((a,b)=>F.so=="df"?o[a.diff]-o[b.diff]||a.name.localeCompare(b.name):a.name.localeCompare(b.name));if(F.so=="za")r.reverse();
+document.getElementById("ct").textContent=`${r.length} of ${D.length} distributions`;
+document.getElementById("ex").innerHTML=r.length?head+r.map(row).join(""):empty("No distributions match these filters.",'<p><button class="bt" onclick="F={...I0};explore()">Clear filters</button></p>')}
+function detail(s){const d=by(s);if(!d)return nf();rec=[d.id,...rec.filter(i=>i!=d.id)].slice(0,6);W("rec",rec);
+$.innerHTML=`<div class="cr"><a href="#explore">Explore</a> / ${d.name}</div><div style="display:flex;gap:12px;align-items:center;margin-bottom:20px"><span class="mg" style="--c:${d.col};width:44px;height:44px;font-size:20px">${d.name[0]}</span><div><h1>${d.name}</h1><span class="mo mu">${d.slug}</span></div></div>
+<div class="two"><div><h2>Specification</h2>${dl(d)}<div class="dl" style="border-top:0"><div>Gaming focus</div><div>${d.game?"Yes":"No"}</div><div>Server use</div><div>${d.srv?"Yes":"No"}</div></div>
+<h2 style="margin-top:28px">Not listed here</h2><p class="mu" style="max-width:60ch">Versions, release dates, system requirements and screenshots are not shown, because they have not been verified against ${d.name}’s own pages. Official downloads and documentation are linked from the project site. Reviews are not available in this build.</p></div>
+<aside><h2>Actions</h2><p style="display:flex;flex-direction:column;gap:8px"><a class="bt p" href="${d.url}" target="_blank" rel="noopener">Official website <svg viewBox="0 0 16 16"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9"/></svg></a><button class="bt" onclick="tog(fav,${d.id})">${star(fav.includes(d.id))} ${fav.includes(d.id)?'Saved':'Save'}</button><button class="bt" onclick="tog(cmp,${d.id},4)">${cmp.includes(d.id)?'Remove from compare':'Add to compare'}</button><button class="bt" onclick="navigator.clipboard&&navigator.clipboard.writeText(location.href)">Copy link</button></p></aside></div>`}
+function compare(){const l=cmp.map(i=>D[i]);if(l.length<2){$.innerHTML=`<h1>Compare</h1><br>${empty(`Select 2–4 distros with the + button to compare them. Selected: ${l.length}.`,'<p><a class="bt" href="#explore">Browse distros</a></p>')}`;return}
+const rows=[["Base","base"],["Packages","pm"],["Init","init"],["Release","rel"],["Level","diff"],["Gaming","game"],["Server","srv"]];
+$.innerHTML=`<h1>Compare</h1><p class="mu">Rows that differ are shaded.</p><div class="wrap"><table><tr><th></th>${l.map(d=>`<th style="color:var(--tx)">${d.name} <button class="ib" onclick="tog(cmp,${d.id})" aria-label="Remove ${d.name}"><svg viewBox="0 0 16 16"><path d="m4 4 8 8M12 4l-8 8"/></svg></button></th>`).join("")}</tr>${rows.map(r=>{const v=l.map(d=>typeof d[r[1]]=="number"?(d[r[1]]?"Yes":"No"):d[r[1]]);return`<tr class="${new Set(v).size>1?'df':''}"><th>${r[0]}</th>${v.map(x=>`<td>${x}</td>`).join("")}</tr>`}).join("")}</table></div>`}
+const Q=[["Experience","diff",["Beginner","Intermediate","Advanced"]],["Release style","rel",["Fixed","Rolling"]],["Gaming","game",["Yes","No"]],["Init system","init",["systemd","runit","OpenRC","No preference"]]];
+function finder(){const sc=Object.keys(qa).length?D.map(d=>({d,s:(qa[0]&&d.diff==qa[0])+(qa[1]&&d.rel.startsWith(qa[1]))+(qa[2]=="Yes"?d.game:qa[2]=="No"?!d.game:0)+(qa[3]&&qa[3]!="No preference"&&d.init.includes(qa[3]))})).filter(x=>x.s>0).sort((a,b)=>b.s-a.s).slice(0,6):null;
+$.innerHTML=`<h1>Finder</h1><p class="mu">Answer any of the questions. Matches rank by how many answers they fit.</p>${Q.map((q,i)=>`<div class="mo mu">${q[0].toUpperCase()}</div><div class="seg">${q[2].map(o=>`<button class="${qa[i]==o?'on':''}" onclick="qa[${i}]='${o}';finder()">${o}</button>`).join("")}</div><br>`).join("")}${sc?`<h2>Matches</h2>${sc.length?head+sc.map(x=>row(x.d)).join(""):empty("No distro fits those answers.")}`:""}`}
+function nf(){$.innerHTML=`<br>${empty("404: that page doesn’t exist.",'<p><a class="bt" href="#">Back to home</a></p>')}`}
+function route(keep){const h=location.hash.slice(1),[p,a]=h.split("/");document.getElementById("cc").textContent=cmp.length?" "+cmp.length:"";
+document.querySelectorAll("nav a.l").forEach(e=>e.classList.toggle("on",e.dataset.r==p));
+if(!keep){const b=document.getElementById("bar");b.className="";void b.offsetWidth;b.className="go"}
+({"":home,explore,compare,finder,favs:()=>{$.innerHTML=`<h1>Saved</h1><br>${fav.length?head+fav.map(i=>row(D[i])).join(""):empty("Nothing saved yet. Use the star on any distro.",'<p><a class="bt" href="#explore">Browse distros</a></p>')}`},d:()=>detail(a)}[p]||nf)();if(!keep)scrollTo(0,0)}
+addEventListener("hashchange",()=>route());addEventListener("keydown",e=>{if(e.key=="/"&&!/INPUT|SELECT/.test(e.target.tagName)){e.preventDefault();document.getElementById("gs").focus()}});route();
+</script></body></html>
